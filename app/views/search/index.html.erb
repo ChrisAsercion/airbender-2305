@@ -1,0 +1,30 @@
+<h1>Nation: <%= params[:nation]%></h1>
+<h2>Number of people associated with this nation: <%= @total%></h2>
+
+<% @data25.each do |character| %>
+<img src="<%= character[:photoUrl] %>" alt="<%= character[:name] %> Image">
+name: <%= character[:name] %>
+affiliation = <%=  character[:affiliation]%>
+
+  <% if character[:allies] %>
+  <%= "allies ="%>
+    <% character[:allies].each do |ally|%>
+      <%= ally %>
+    <% end %>
+  <% else %>
+    <%= "allies = none"%>
+  <% end %>
+
+  <% if character[:enemies] %>
+    <%= "enemies ="%>
+    <% character[:enemies].each do |enemy|%>
+      <%= enemy %>
+    <% end %>
+  <% else %>
+    <%= "enemies = none"%>
+  <% end %>
+
+
+
+
+<% end%>

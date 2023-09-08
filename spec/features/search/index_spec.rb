@@ -10,7 +10,7 @@ RSpec.describe 'Nation Search', type: :feature do
       
       expect(current_path).to eq(search_path)
       
-
+      expect(page).to have_content("Number of people associated with this nation: 97")
       expect(page).to have_content("name: Azula")
       expect(page).to have_content("affiliation = Azula's team (formerly)")
       expect(page).to have_content("allies = Ozai Zuko")
